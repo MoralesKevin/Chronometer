@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Linear Beam';
+    src: url('LinearBeam05.woff2') format('woff2'),
+        url('LinearBeam05.woff') format('woff'),
+        url('LinearBeam05.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
