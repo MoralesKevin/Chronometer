@@ -9,11 +9,45 @@
     font-style: italic;
 }
 
-h3, p{
+@font-face {
+    font-family: 'Linear Beam';
+    src: url('/fonts/LinearBeam05.woff2') format('woff2'),
+        url('/fonts/LinearBeam05.woff') format('woff'),
+        url('/fonts/LinearBeam05.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.Chronometre{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.compteur{
+    display: flex;
+    margin: auto;
+    text-align: center;
+}
+
+h3{
     font-family: 'DS-Digital';
-    font-weight: bold;
+    font-size: 3em;
     font-style: italic;
+    font-weight: bold;
+}
+
+.centiemes{
+    display: block; 
+    margin: auto;
+    width: 60px;
+}
+
+p{
+    font-family: 'DS-Digital';
     font-size: 1.5em;
+    font-style: italic;
+    font-weight: bold;
 }
 
 button{
@@ -29,7 +63,8 @@ button{
     box-shadow: 2px 2px 5px black;
 }
 
-button:hover{
+button:active{
+    color: black;
     background-color: rgb(255, 187, 0);
     box-shadow: inset 2px 2px 5px black;
 }
@@ -46,14 +81,14 @@ button:hover{
 
 .intervalle{
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 100px;
 }
 
 .tableauTemps{
     display: flex;
     justify-content: center;
     margin: auto;
-    width: 420px;
+    width: 550px;
 }
 
 h2{

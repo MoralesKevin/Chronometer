@@ -56,7 +56,7 @@ class Chronometre extends Component {
             } else if (this.state.secondesInter > 59) {
                 this.setState({
                     secondesInter: 0,
-                    minutesInter: this.state.secondesInter + 1,
+                    minutesInter: this.state.minutesInter + 1,
                 })
             } else if (this.state.minutes > 59) {
                 this.setState({
@@ -66,7 +66,7 @@ class Chronometre extends Component {
             } else if (this.state.minutesInter > 59) {
                 this.setState({
                     minutesInter: 0,
-                    heuresInter: this.state.secondesInter + 1,
+                    heuresInter: this.state.heuresInter + 1,
                 })
             }
         }
@@ -133,19 +133,24 @@ class Chronometre extends Component {
     render() {
         return (
             <div className="Chronometre">
-                <h1>chronometer</h1>
-                <h3>{this.AddZeroFormat(this.state.heures)} : {this.AddZeroFormat(this.state.minutes)} : {this.AddZeroFormat(this.state.secondes)} : {this.AddZeroFormat(this.state.centiemes)}</h3>
+                <h1>Chronometer</h1>
+                <div className="compteur">
+                    <h3> {this.AddZeroFormat(this.state.heures)} : {this.AddZeroFormat(this.state.minutes)} : {this.AddZeroFormat(this.state.secondes)} : </h3>
+                    <h3 className="centiemes"> {` ${this.AddZeroFormat(this.state.centiemes)}`}</h3>
+                </div>
 
-                <button onClick={this.Stop}>START / STOP</button>
-                <button onClick={this.tempsTour}>LAP</button>
-                <button onClick={this.reset} >RESET</button>
+                <div className="button">
+                    <button onClick={this.Stop}>START / STOP</button>
+                    <button onClick={this.tempsTour}>LAP</button>
+                    <button onClick={this.reset} >RESET</button>
+                </div>
 
                 <div className="tableauTemps">
                     <div className="tempsDuTour">
                         <h2>Lap time :</h2>
 
                         {this.state.tour.map(lap => (
-                            <p className={`temps`}> <span className="numTemps">{this.state.tour.indexOf(lap)}</span> - {lap} <br/> <hr/> </p>))
+                            <p className={`temps`}> {this.state.tour.indexOf(lap)} - {lap} <br /> <hr /> </p>))
                         }
                     </div>
 
@@ -153,7 +158,7 @@ class Chronometre extends Component {
                         <h2>Interval :</h2>
 
                         {this.state.intervalle.map(inter => (
-                            <p className={`inter`}> <span className="numInter">{this.state.intervalle.indexOf(inter)}</span> - {inter} <br/> <hr/></p>))
+                            <p className={`inter`}> {inter} <br /> <hr /> </p>))
                         }
                     </div>
                 </div>
